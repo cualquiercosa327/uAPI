@@ -1,6 +1,8 @@
 # µAPI
 
-µAPI is a micro API project built on top of Joyent's [libuv](https://github.com/joyent/libuv/) library.
+µAPI is a micro API project built on top of Joyent's [libuv](https://github.com/joyent/libuv/) library. A
+large portion of the core HTTP server is based on Kelly Sommers'
+[Haywire](https://github.com/kellabyte/Haywire/) source code.
 
 ## Build Instructions
 
