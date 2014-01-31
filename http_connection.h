@@ -1,0 +1,29 @@
+
+#ifndef __HW_HTTP_CONNECTION_H__
+#define __HW_HTTP_CONNECTION_H__
+
+#include "uv.h"
+#include "http_parser.h"
+#include "http_request.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct {
+	uv_tcp_t stream;
+	http_parser parser;
+	uv_write_t write_req;
+	http_request* request;
+	char current_header_key[1024];
+	int current_header_key_length;
+	char current_header_value[1024];
+	int current_header_value_length;
+	int keep_alive;
+} http_connection;
+
+#ifdef __cpluspluc
+}
+#endif
+
+#endif /* __HW_HTTP_CONNECTION_H__ */
