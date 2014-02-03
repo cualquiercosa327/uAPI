@@ -96,8 +96,8 @@ hw_string* create_response_buffer(hw_http_response* response)
     
     /* Add the body */
     APPENDSTRING(response_string, "Content-Length: ");
-    
-    string_from_int(&content_length, resp->body.length + 3, 10);
+   
+    string_from_int(&content_length, resp->body.length, 10);
     append_string(response_string, &content_length);
     APPENDSTRING(response_string, CRLF CRLF);
     
