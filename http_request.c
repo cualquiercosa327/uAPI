@@ -29,13 +29,14 @@ int last_was_value;
 
 KHASH_MAP_INIT_STR(string_hashmap, char*)
 
-void print_headers(http_request* request)
+void
+print_headers(http_request* request)
 {
-    const char* k;
-    const char* v;
+	const char* k;
+	const char* v;
 
-    khash_t(string_hashmap) *h = request->headers;
-    kh_foreach(h, k, v, { printf("KEY: %s VALUE: %s\n", k, v); });
+	khash_t(string_hashmap) *h = request->headers;
+	kh_foreach(h, k, v, { fprintf(stderr, "KEY: %s VALUE: %s\n", k, v); });
 }
 
 void set_header(http_request* request, char* name, char* value)
