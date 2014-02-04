@@ -6,9 +6,10 @@
 SRV_SRCS = uapi_srv.c
 SRV_OBJS = uapi_srv.o
 
-PROC_SRCS = base64.c configuration/configuration.c configuration/ini.c \
-	http_parser.c http_request.c http_response.c http_response_cache.c \
-	http_server.c hw_string.c route_compare_method.c server_stats.c uapi.c
+PROC_SRCS = base64.c bstrlib.c configuration/configuration.c \
+	configuration/ini.c http_parser.c http_request.c http_response.c \
+	http_response_cache.c http_server.c hw_string.c route_compare_method.c \
+	server_stats.c uapi.c
 
 PROC_OBJS = $(PROC_SRCS:.c=.o)
 
